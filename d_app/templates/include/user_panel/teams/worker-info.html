@@ -1,0 +1,20 @@
+{% load static %}
+<div class="box worker" >
+    <div  class="box-content">
+        <img src="{% static 'images/avatar.png' %}" alt="avatar" height="60" width="60"><br />
+        <b>{{ worker.name }}</b><br /><b>{{ worker.surname }}</b><hr>
+        <p onclick="task_info('{{ worker.name }}-{{ worker.surname }}-{{ worker.id }}-edit')">Kliknij aby uzupełnić dane pracownika</p><hr>
+    </div>
+    <div class="box-buttons">
+        {% include 'include/user_panel/delete-form.html' with name=worker.name|add:' '|add:worker.surname id=worker.id text='USUŃ PRACOWNIKA'  action='delete_worker'%}
+    </div>
+</div>
+<script>
+    task_info = (form) =>{
+        {% if not tasks %}
+            alert('Nie ma masz zdefiniowanych żadnych zadań. Zdefiniuj je, a następnie uzupełnij czasy ich wykonywania')
+        {% else %}
+            blur_body(form)
+        {% endif %}
+    }
+</script>

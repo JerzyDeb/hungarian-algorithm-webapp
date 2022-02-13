@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link href="{% static 'css/user-panel.css' %}" rel="stylesheet">
+{% endblock extra_css %}
+
+{% block content %}
+    <div class="page-container">
+        <div class="main-title">
+            PANEL UŻYTKOWNIKA - {{ user }}
+        </div>
+
+        <div class="box content-wrap">
+            <div id="panel-menu">
+                {% block panel %}
+
+                {% endblock panel %}
+            </div>
+
+            <div class="box-content">
+                {% block box_content %}
+
+                {% endblock box_content %}
+            </div>
+        </div>
+    </div>
+
+    <div id="opacity-div"></div>
+    {% include 'include/user_panel/forms/worker-form.html' %}
+    {% include 'include/user_panel/forms/task-form.html' %}
+    {% include 'include/user_panel/forms/plan-form.html' %}
+    {% include 'include/user_panel/forms/team-form.html' %}
+    {% include 'include/user_panel/forms/edit-worker-form.html' %}
+{% endblock %}

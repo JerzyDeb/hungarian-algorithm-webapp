@@ -1,0 +1,17 @@
+<div class="box top-form" id="team-form">
+    <div class="box-title box-radius">
+        UTWÓRZ NOWY ZESPÓŁ
+        <button onclick="unBlur_body('team-form', 'new-team')">&#10006</button>
+    </div>
+    <p class="info">Podaj nazwę zespołu:</p>
+    <form method="post" action="" id="new-team" >
+        <div class="box-content">
+            {% csrf_token %}
+            <input type='hidden' name='action' value='add_team'>
+            <label for="name">NAZWA</label><br /> <input type="text" id="name" name="name" required pattern="[a-zA-ZÀ-ž0-9]+[a-zA-ZÀ-ž0-9\s]+"><br /><br />
+        </div>
+        <div class="box-buttons">
+            <button class="animated-button big-button" type="submit">ZAPISZ</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+{% if plans %}
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th><b>Nazwa</b></th>
+                <th><b>Metoda W/H</b></th>
+                <th><b>Zespół</b></th>
+                <th><b>Data utworzenia</b></th>
+                <th><b>Plik</b></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plan in plans %}
+                {% include 'include/user_panel/plans/plan-info.html' %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    Brak
+{% endif %}

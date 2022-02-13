@@ -1,0 +1,32 @@
+<div class="box top-form" id="plan-form">
+    <div class="box-title box-radius">
+        UTWÓRZ NOWY PLAN
+        <button onclick="unBlur_body('plan-form', 'new-plan')">&#10006</button>
+    </div>
+    <br />
+    <form method="post" action="" id="new-plan" onsubmit="submit_form(event)">
+        <div class="box-content">
+            {% csrf_token %}
+            <input type='hidden' name='action' value='add_plan'>
+            <label for="name">NAZWA</label><br /> <input type="text" id="name" name="name" required pattern="[a-zA-ZÀ-ž0-9]+[a-zA-ZÀ-ž0-9\s]+"><br /><br />
+            {% if not actual_team %}
+                <label for="team-filter">ZESPÓŁ </label><br />
+                <select class="styled-select-big" id="team-filter" name="team-filter" required>
+                    {% include 'include/user_panel/select-team.html' with create_plan='true'%}
+                </select>
+                <br /><br />
+            {% else %}
+                <input type="hidden" name="team-filter" value="{{ actual_team.id }}">
+            {% endif %}
+            <label for="method">METODA </label><br  />
+            <select class="styled-select-big" id="method" name="method" required>
+                <option value="True">węgierska</option>
+                <option value="False">heurystyczna</option>
+            </select>
+            <br /><br />
+        </div>
+        <div class="box-buttons">
+            <button class="animated-button big-button" type="submit">ZAPISZ</button>
+        </div>
+    </form>
+</div>

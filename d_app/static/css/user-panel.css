@@ -1,0 +1,250 @@
+#workers, #tasks {
+  height: 90%;
+  margin-top: 10px;
+}
+
+#workers {
+  width: 70%;
+  margin-left: 20px;
+  float: left;
+}
+
+#workers .box-content {
+  overflow: auto;
+  padding-top: 5px;
+}
+
+#workers .box-content .worker-edit {
+  border: 1px solid black;
+  display: none;
+  margin: auto;
+}
+
+#workers .box-content .worker {
+  transition: all 0.2s ease 0s;
+  box-shadow: none;
+  border: 2px solid #6f42c1;
+  height: 55%;
+  width: 23%;
+  white-space: normal;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: inline-block;
+}
+
+#workers .box-content .worker:hover {
+  transform: translateY(-3px);
+}
+
+#workers .box-content .worker:hover p {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#workers .box-content .worker .box-content {
+  font-size: small;
+  font-weight: normal;
+}
+
+#tasks {
+  margin-right: 20px;
+  float: right;
+  width: 22%;
+}
+
+#tasks .box-content {
+  overflow: auto;
+}
+
+#plans, #team {
+  clear: both;
+  height: 450px;
+  width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#plans .box-content, #team .box-content {
+  overflow: auto;
+}
+
+#team {
+  height: 810px;
+}
+
+#opacity-div {
+  background-color: black;
+  opacity: 80%;
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.worker-edit .box-content {
+  max-height: 150px;
+  vertical-align: middle;
+}
+
+.worker-edit .box-content .worker-execution {
+  font-size: small;
+  border: 1px solid black;
+  padding: 10px 5px;
+  display: inline-block;
+  width: 45%;
+  height: 45px;
+  margin: 2px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: all 0.2s ease 0s;
+}
+
+.worker-edit .box-content .worker-execution label {
+  font-size: x-small;
+}
+
+.worker-edit .box-content .worker-execution:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+.worker-edit .box-content .worker-execution input[type=number] {
+  -moz-appearance: textfield;
+  border: none;
+  font-weight: bold;
+}
+
+.worker-edit .box-content .worker-execution input[type=number]:hover {
+  cursor: pointer;
+}
+
+.worker-edit .box-content .worker-execution input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.top-form {
+  display: none;
+  width: 30%;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.top-form label {
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.top-form .box-content {
+  overflow: auto;
+}
+
+.top-form input {
+  width: 50%;
+  text-align: center;
+}
+
+.top-form .info {
+  text-align: center;
+  font-size: small;
+  font-weight: normal;
+}
+
+.save-button {
+  height: 25px;
+  width: 80%;
+  background-color: #6f42c1;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button {
+  letter-spacing: 2px;
+  font-size: x-small;
+  font-weight: bolder;
+  color: red;
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.delete {
+  float: right;
+}
+
+.task button, .styled-table button {
+  background-color: Transparent;
+  border: none;
+  visibility: hidden;
+  color: red;
+}
+
+.task {
+  overflow: hidden;
+  font-weight: normal;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  text-align: left;
+  padding: 10px;
+}
+
+.task, tbody tr {
+  transition: all 0.1s ease 0s;
+}
+
+.task:hover, tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.task:hover button, tbody tr:hover button {
+  visibility: visible;
+}
+
+.styled-table {
+  width: 90%;
+  border-collapse: collapse;
+  text-align: left;
+  margin: 10px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  background: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table td {
+  font-weight: normal;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr a {
+  color: blue;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #6f42c1;
+}
+
+button:hover {
+  cursor: pointer;
+}
