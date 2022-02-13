@@ -1,0 +1,18 @@
+<div class="box top-form" id="task-form">
+    <div class="box-title box-radius">
+        DODAJ NOWE ZADANIE
+        <button onclick="unBlur_body('task-form', 'new-task')">&#10006</button>
+    </div>
+    <br />
+    <form method="post" action="" id="new-task">
+        <div class="box-content">
+            {% csrf_token %}
+            <input type='hidden' name='action' value='add_task'>
+            <input type='hidden' name='team' value='{{ actual_team.id }}'>
+            <label for="name">NAZWA</label><br /> <input type="text" id="name" name="name" required pattern="[a-zA-ZÀ-ž0-9]+[a-zA-ZÀ-ž0-9\s]+"><br /><br />
+        </div>
+        <div class="box-buttons">
+            <button class="animated-button big-button" type="submit">ZAPISZ</button>
+        </div>
+    </form>
+</div>

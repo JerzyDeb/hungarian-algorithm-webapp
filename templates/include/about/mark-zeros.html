@@ -1,0 +1,14 @@
+{% load commontags %}
+<table>
+    {% for i in size %}
+        <tr>
+            {% for j in size %}
+                {% if bool_cost_array|index:i|index:j is True %}
+                    <td class="assign">{{ new_cost_array|index:i|index:j }}</td>
+                {% else %}
+                    <td>{{ new_cost_array|index:i|index:j }}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

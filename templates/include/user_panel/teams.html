@@ -1,0 +1,49 @@
+{% extends 'user-panel-base.html' %}
+{% load static %}
+
+{% block panel %}
+    <a href="{% url 'panel' %}" ><div id="team-button" class="category active">ZARZĄDZANIE ZESPOŁEM</div></a>
+    <a href="{% url 'plans' %}" ><div id="plan-button"  class="category no-active">PLANY</div></a>
+{% endblock panel %}
+
+{% block box_content %}
+    <div class="box" id="team">
+        <div class="box-title">
+            {% if teams %}
+                <form action="" method="post" id="filter">
+                    <input type='hidden' name='action' value='filter'>
+                    {% csrf_token %}
+                    <label for="team-filter">Wybierz zespół:</label>
+                        <select class="styled-select-small" id="team-filter" name="team-filter" required>
+                            {% include 'include/user_panel/select-team.html' %}
+                        </select>
+                </form>
+            {% endif %}
+        </div>
+        <br />
+        <button class="animated-button" onclick="blur_body('team-form')">UTWÓRZ NOWY ZESPÓŁ</button>
+        {% if teams %}
+            <div class="box-content">
+                {% include 'include/user_panel/teams/workers.html' %}
+                {% include 'include/user_panel/teams/tasks.html' %}
+            </div>
+            <div class="box-buttons">
+                {% if actual_team in able_teams %}
+                    <button onclick="blur_body('plan-form')" class="animated-button big-button">UTWÓRZ PLAN DLA TEGO ZESPOŁU</button><br /><br />
+                {% endif %}
+            </div>
+            {% include 'include/user_panel/delete-form.html' with name=actual_team.name id=actual_team.id text='USUŃ TEN ZESPÓŁ'  action='delete_team'%}
+        {% endif %}
+    </div>
+{% endblock box_content %}
+
+{% block extra_js %}
+    <script>
+        {% if messages %}
+            {% for message in messages %}
+                alert('{{message}}')
+            {% endfor %}
+        {% endif %}
+    </script>
+    <script type="text/javascript" src="{% static "js/team-filter.js" %}"></script>
+{% endblock extra_js %}

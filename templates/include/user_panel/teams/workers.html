@@ -1,0 +1,18 @@
+<div class="box" id="workers">
+    <div class="box-title">
+        PRACOWNICY
+    </div>
+    <div class="box-content">
+        {% if workers %}
+            {% for worker in workers %}
+                {% include 'include/user_panel/teams/worker-info.html' %}
+            {% endfor %}
+        {% else %}
+            Brak
+        {% endif %}
+    </div>
+    <hr>
+    <div class="box-buttons">
+        <button class="animated-button" onclick="blur_body('worker-form')">DODAJ PRACOWNIKA</button>
+    </div>
+</div>

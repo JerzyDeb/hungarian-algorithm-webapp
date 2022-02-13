@@ -1,0 +1,23 @@
+.box-content {
+  padding-top: 20px;
+}
+
+.box-content p {
+  margin: 10px 150px;
+  font-weight: normal;
+  font-size: medium;
+}
+
+img {
+  height: 100%;
+  width: 60%;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+h3:hover {
+  cursor: pointer;
+}

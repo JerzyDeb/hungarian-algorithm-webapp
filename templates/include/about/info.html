@@ -1,0 +1,27 @@
+<h2>Kilka faktów o algorytmie węgierskim</h2>
+<ul>
+    <li>Metoda węgierska jest to algorytm pozwalający nam rozwiązać problem przypisania w czasie wielomianowym.</li>
+    <li>Została ona dopracowana oraz opublikowana przez Harolda Kuhna w 1955 roku.</li>
+    <li>Została nazwana „metodą węgierską” z uwagi na fakt, że została ona wyprowadzona na podstawie wcześniejszych prac dwóch węgierskich matematyków: Dénesa Kőniga i Jenő Egerváry'ego.</li>
+    <li>W roku 1957 profesor matematyki James Raymond Munkres zauważył, że algorytm węgierski jest silnie wielomianowy. Od tamtej pory metoda węgierska jest również znana jako algorytm Kuhna-Munkersa</li>
+</ul>
+
+<h2>Problem przydziału</h2>
+<ul>
+    <li>Problem przydziału należy do klasy problemów P (deterministycznie wielomianowych)</li>
+    <li>Jest to problem decyzyjny, dla którego rozwiązanie można znaleźć w czasie wielomianowym</li>
+    <li>Należy przydzielić <i>m</i> zadań do <i>m</i> wykonawców.</li>
+    <li>Każde zadanie może być wykonywane przez co najwyżej jednego wykonawcę i jeden wykonawca może wykonywać co najwyżej jedno zadanie.</li>
+    <li>Z wykonaniem zadania <i>i</i> przez wykonawcę <i>j</i> związany jest pewien koszt c<sub><i>ij</i></sub>. </li>
+    <li>Należy dokonać takiego przydziału, aby koszt wykonania był najmniejszy.</li>
+</ul>
+<h2>Kroki algorytmu</h2>
+<ol>
+    <li>Tworzymy macierz kwadratową</li>
+    <li>Odejmujemy z każdego wiersza w macierzy najmniejszy element</li>
+    <li>Odejmujemy z każdej kolumny najmniejszy element</li>
+    <li>Wykreślamy jak najmniejszą ilością liń wszystkie zera w macierzy</li>
+    <li>Jeżeli liczba liń jest różna od rozmiaru macierzy to odejmujemy najmniejszy nieprzekreślony element od innych, a dodajemy do przekreślonych podwójnie i powtarzamy punkt 4.</li>
+    <li>Jeżeli liczba liń jest równa rozmiarowi macierzy to oznaczamy tzw. zera niezależne</li>
+    <li>Na podstawie współrzędnych zaznaczonych zer niezależnych przydzielamy zadania do wykonawców</li>
+</ol>

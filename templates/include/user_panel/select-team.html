@@ -1,0 +1,13 @@
+{% for team in teams %}
+    {% if team == actual_team %}
+        <option selected="selected">{{ actual_team.name }}</option>
+    {% else %}
+        {% if create_plan %}
+            {% if team in able_teams %}
+                <option value="{{ team.id }}">{{ team.name }}</option>
+            {% endif %}
+        {% else %}
+            <option value="{{ team.id }}">{{ team.name }}</option>
+        {% endif %}
+    {% endif %}
+{% endfor %}

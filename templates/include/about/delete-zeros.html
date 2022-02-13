@@ -1,0 +1,43 @@
+{% load commontags %}
+{% for i in steps %}
+    <table>
+        <tr>
+            {% for col in size %}
+                {% if col in marked_cols|index:i %}
+                    <td class="mark-cross">x</td>
+                {% else %}
+                    <td> </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+
+        {% for j in size %}
+            <tr>
+                {% for k in size %}
+                    {% if j in marked_rows|index:i and k in marked_cols|index:i %}
+                        <td class="double-crossed">{{ arrays|index:i|index:j|index:k }}</td>
+                    {% elif  j in marked_rows|index:i or k in marked_cols|index:i%}
+                        <td class="crossed">{{ arrays|index:i|index:j|index:k }}</td>
+                    {% else %}
+                        <td>{{ arrays|index:i|index:j|index:k }}</td>
+                    {% endif %}
+                {% endfor %}
+
+                {% if j in marked_rows|index:i %}
+                    <td class="mark-cross">x</td>
+                {% else %}
+                    <td> </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    <br />
+    {% if numbers_of_lines|index:i < elements %}
+        <p>Liczba linii: {{ numbers_of_lines|index:i }} < {{ elements }}. Najmniejszy nieprzekreślony element: {{ minimum_values|index:i }}.</p>
+        <p>Odejmujemy go od nieprzekreślonych elementów a dodajemy do przekreślonych podwójnie:</p>
+    {% else %}
+        <p>Liczba linii: {{ numbers_of_lines|index:i }} = {{ elements }}. </p>
+    {% endif %}
+
+
+{% endfor %}

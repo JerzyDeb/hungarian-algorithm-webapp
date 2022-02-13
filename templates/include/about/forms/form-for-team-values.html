@@ -1,0 +1,11 @@
+<div id="form-for-team-values">
+    <form method="post">
+        {% csrf_token %}
+        <input type='hidden' name='action' value='show-steps-for-team-values'>
+        <label for="team-filter">Wybierz zespół: </label>
+        <select class="styled-select-small" id="team-filter" name="team-filter" required>
+            {% include 'include/user_panel/select-team.html' with create_plan='true'%}
+        </select><br /><br />
+        <button class="animated-button" type="submit">OBLICZ</button>
+    </form>
+</div>

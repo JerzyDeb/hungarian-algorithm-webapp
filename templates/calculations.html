@@ -1,0 +1,29 @@
+{% extends 'about.html' %}
+
+{% block current_content %}
+    <div class="page-container">
+        <div class="main-title">O ALGORYTMIE WĘGIERSKIM</div>
+        <div class="box content-wrap">
+            <div class="box-content">
+                <div id="calculations">
+                    <br />
+                    <h2>Obliczenia</h2>
+                    {% include 'include/about/subtract.html' %}
+                    <br /><br /><br /><br />
+                    <p>Wykreślamy jak najmniejszą liczbą linii wszystkie zera dopóki liczba linii nie będzie równa rozmiarowy macierzy ({{ elements }}).</p>
+                    <p>Wartości niebieskie zostały przekreślone raz, a czerwone dwa razy:</p>
+                    {% include 'include/about/delete-zeros.html' %}
+                    <br />
+                    <p>Możemy przystąpić do oznaczania zer niezależnych:</p>
+                    {% include 'include/about/mark-zeros.html' %}
+                    <p>Na podstawie współrzędnych zaznaczonych zer przydzielamy zadania do pracowników:</p>
+                    {% include 'include/about/assign.html' %}
+                    <br /><br />
+                    Po zsumowaniu zaznaczonych wartości, optymalna wartość przydziały wynosi <span id="cost">{{ cost }}</span>
+                    <br /><br />
+                    Przy metodzie heurystycznej wartość wynosiłaby <span id="second-cost">{{ heuristic_cost }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
