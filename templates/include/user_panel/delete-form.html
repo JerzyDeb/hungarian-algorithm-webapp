@@ -1,7 +1,0 @@
-<form method="post" onsubmit="return confirm('{{ name }} - Czy na pewno chcesz usunąć?');">
-    {% csrf_token %}
-    <button class="delete-button" type="submit">{{ text }}</button>
-    <input type='hidden' name='id' value='{{ id }}'>
-    <input type='hidden' name='team' value='{{ actual_team.id }}'>
-    <input type='hidden' name='action' value='{{ action }}'>
-</form>
