@@ -1,4 +1,4 @@
-# A dektop version of web application
+# A desktop version of web application
 Required Firefox web browser in version **97.0** or newest and internet connection
 
 1. Download all files
